@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f2f2f2;
+    }
+
+    .container h2 {
+      text-align: center;
+    }
+
+    .container label,
+    .container input[type="text"],
+    .container input[type="password"] {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .container input[type="submit"] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .container input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    {%if msg%}
+    <p>{{msg}}</p>
+    {% endif %}
+    <form action="/login" method="post">
+      <label for="username" id="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password"  id="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <a action="/register" href="register">New User? Click Here to Register</a>
+      <input type="submit" value="Login">
+    </form>
+  </div>
+</body>
+</html>
